@@ -2,13 +2,15 @@ import "./App.css";
 import Header from "./Pages/Shared/Header/Header";
 import Home from "./Pages/Home/Home";
 import { Route, Routes } from "react-router-dom";
+import SignUP from "./Pages/SignIn/SignUp/SignUP";
 function App() {
   return (
-    <div>
+    <div className="scroll-smooth hover:scroll-auto">
       <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route path="/signup" element={<SignUP></SignUP>}></Route>
       </Routes>
     </div>
   );

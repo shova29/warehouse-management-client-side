@@ -4,7 +4,7 @@ const InventoryItem = ({ inventoryItem }) => {
   const { name, image, shortDescription, price, quantity, supplierName } =
     inventoryItem;
   return (
-    <div className="flex justify-center">
+    <div className="px-4 container mx-auto flex justify-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
       <div className="overflow-x-hidden  rounded-lg shadow-lg bg-white w-96">
         <a href="#!" className="flex flex-col items-center">
           <img className="rounded-t-lg pt-4 w-1/2" src={image} alt="" />
