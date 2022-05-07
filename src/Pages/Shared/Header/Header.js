@@ -1,21 +1,22 @@
 import { Transition } from "@headlessui/react";
 import React, { useState } from "react";
+import logo from "../../../Assets/Images/logo/logo-2.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <nav className="bg-rose-600 shadow-md w-full h-20">
+    <nav className="bg-rose-600 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="flex-shrink-0">
-              <img className="h-8 w-8" src="" alt="logo" />
+            <div className="ml-6 flex-shrink-0">
+              <img className="h-16 w-16" src={logo} alt="logo" />
             </div>
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
+              <div className="ml-12 flex items-baseline space-x-4">
                 <a
                   href="#"
-                  className=" hover:bg-text-700 text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="hover:bg-text-700 text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   Perfume Pungent
                 </a>
@@ -25,6 +26,12 @@ const Header = () => {
                   className="text-gray-300 hover:bg-text-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                 >
                   About
+                </a>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:bg-text-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Blogs
                 </a>
 
                 <a
@@ -47,17 +54,17 @@ const Header = () => {
                 >
                   My Items
                 </a>
-                <div class="flex items-center lg:ml-auto  mb-2 lg:mb-0">
-                  <button
-                    type="button"
-                    className="ml-52 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-xs leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    Login
-                  </button>
-                </div>
               </div>
+            </div>
+            <div class="flex items-center lg:ml-56 mb-2 lg:mb-0">
+              <button
+                type="button"
+                className="inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-xs leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+              >
+                Login
+              </button>
             </div>
           </div>
           <div className="-mr-2 flex md:hidden">
@@ -123,14 +130,14 @@ const Header = () => {
                 href="#"
                 className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                Blogs
+                About
               </a>
 
               <a
                 href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
               >
-                About
+                Blogs
               </a>
 
               <a
@@ -155,7 +162,7 @@ const Header = () => {
               </a>
               <button
                 type="button"
-                className=" mb-2 lg:mb-0 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-xs leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                className=" mb-2 lg:mb-0 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-xs leading-tight uppercase rounded hover:text-rose-500 hover:bg-rose-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-rose-200 transition duration-150 ease-in-out"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="light"
               >
@@ -180,8 +187,8 @@ const Header = () => {
       >
         <defs>
           <linearGradient id="sw-gradient-0" x1="0" x2="0" y1="1" y2="0">
-            <stop stop-color="hsla(356, 100%, 95%, 1)" offset="0%"></stop>
-            <stop stop-color="hsla(356, 100%, 95%, 1)" offset="100%"></stop>
+            <stop stopColor="hsla(356, 100%, 95%, 1)" offset="0%"></stop>
+            <stop stopColor="hsla(356, 100%, 95%, 1)" offset="100%"></stop>
           </linearGradient>
         </defs>
         <path

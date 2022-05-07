@@ -1,0 +1,41 @@
+import React from "react";
+
+const InventoryItem = ({ inventoryItem }) => {
+  const { name, image, shortDescription, price, quantity, supplierName } =
+    inventoryItem;
+  return (
+    <div className="flex justify-center">
+      <div className="overflow-x-hidden  rounded-lg shadow-lg bg-white w-96">
+        <a href="#!" className="flex flex-col items-center">
+          <img className="rounded-t-lg pt-4 w-1/2" src={image} alt="" />
+        </a>
+        <div className="p-6">
+          <h5 className="text-gray-900 text-xl font-medium mb-2">{name}</h5>
+          <p className="text-gray-700 text-sm mb-4">{shortDescription}</p>
+          <p className="text-gray-700 text-sm font-bold mb-4 mt-2">
+            Price:
+            <span className="text-rose-700"> ${price}</span>
+          </p>
+          <p className="text-gray-700 text-sm font-bold mb-4">
+            Quantity:
+            <span className="text-rose-700"> {quantity}</span>
+          </p>
+          <p className="text-gray-700 font-bold text-sm">
+            Supplier Name:
+            <span className="text-rose-700"> {supplierName}</span>
+          </p>
+        </div>
+        <div className="p-6">
+          <button
+            type="button"
+            className="inline-block px-6 py-2.5 bg-rose-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
+          >
+            Stock Update
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default InventoryItem;
