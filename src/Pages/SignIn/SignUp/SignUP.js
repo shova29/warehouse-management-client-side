@@ -4,20 +4,27 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import SocialSignIn from "../SocialSignIn/SocialSignIn";
+import Loading from "../../Shared/Loading/Loading";
 
 const SignUP = () => {
   const [agree, setAgree] = useState(false);
   const [error, setError] = useState("");
-
   const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
   const navigate = useNavigate();
   let errorElement;
+
+  const navigateSignin = () => {
+    navigate("/signin");
+  };
+
+  if (loading || updating) {
+    return <Loading></Loading>;
+  }
 
   if (user) {
     console.log("user", user);
@@ -57,7 +64,7 @@ const SignUP = () => {
                   name="name"
                   className="block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Your Name"
-                  for="name"
+                  htmlFor="name"
                   required
                 />
               </div>
@@ -68,7 +75,7 @@ const SignUP = () => {
                   name="email"
                   className=" block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Email address"
-                  for="email"
+                  htmlFor="email"
                   required
                 />
               </div>
@@ -79,7 +86,7 @@ const SignUP = () => {
                   name="password"
                   className=" block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Password"
-                  for="password"
+                  htmlFor="password"
                   required
                 />
               </div>
@@ -89,7 +96,7 @@ const SignUP = () => {
                   name="confirmPassword"
                   className="block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Confirm Password"
-                  for="confirmPassword"
+                  htmlFor="confirmPassword"
                   required
                 />
               </div>
@@ -115,12 +122,6 @@ const SignUP = () => {
                     Agree with the terms and conditions
                   </label>
                 </div>
-                <a
-                  href="#!"
-                  className="text-rose-600 font-bold hover:text-rose-700 focus:text-rose-700 active:text-rose-800 duration-200 transition ease-in-out"
-                >
-                  Forgot password?
-                </a>
               </div>
               <p className="text-rose-500 ml-2 mb-2">{error}</p>
               <button
@@ -133,6 +134,17 @@ const SignUP = () => {
               </button>
             </form>
             {errorElement}
+            <p className="ml-5 mt-6">
+              Already have an account?{" "}
+              <Link
+                to="/signin"
+                className="text-rose-600 pe-auto font-bold text-decoration-none"
+                onClick={navigateSignin}
+              >
+                Sign in
+              </Link>
+            </p>
+            <SocialSignIn></SocialSignIn>
           </div>
         </div>
       </div>

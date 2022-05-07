@@ -1,68 +1,96 @@
 import { Transition } from "@headlessui/react";
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import logo from "../../../Assets/Images/logo/logo-2.png";
+import auth from "../../../firebase.init";
+import CustomLink from "../CustomLink/CustomLink";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [user] = useAuthState(auth);
+  const handleSignOut = () => {
+    signOut(auth);
+  };
   return (
     <nav className="bg-rose-600 shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        as={CustomLink}
+        to="/"
+      >
         <div className="flex items-center justify-between h-18">
           <div className="flex items-center">
             <div className="ml-6 flex-shrink-0">
-              <img className="h-16 w-16" src={logo} alt="logo" />
+              <img
+                className="h-16 w-16"
+                src={logo}
+                alt="logo"
+                as={CustomLink}
+                to="/home"
+              />
             </div>
             <div className="hidden md:block">
               <div className="ml-12 flex items-baseline space-x-4">
-                <a
-                  href="#"
+                <li
                   className="hover:bg-text-700 text-white text-base px-3 py-2 mr-16 rounded-md text-sm font-medium"
+                  as={CustomLink}
+                  to="/home"
                 >
                   Perfume Pungent
-                </a>
+                </li>
 
-                <a
-                  href="#"
+                <li
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 ml-16 rounded-md text-sm font-medium"
+                  as={CustomLink}
+                  to="/about"
                 >
                   About
-                </a>
-                <a
-                  href="#"
+                </li>
+                <li
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  as={CustomLink}
+                  to="/blogs"
                 >
                   Blogs
-                </a>
+                </li>
 
-                <a
-                  href="#"
+                <li
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  as={CustomLink}
+                  to="/manageitems"
                 >
                   Manage Items
-                </a>
+                </li>
 
-                <a
-                  href="#"
+                <li
                   className="text-gray-300 hover:bg-text-700  text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  as={CustomLink}
+                  to="/additems"
                 >
                   Add Items
-                </a>
+                </li>
 
-                <a
-                  href="#"
+                <li
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 lg:mr-16 rounded-md text-sm font-medium"
+                  as={CustomLink}
+                  to="/myitems"
                 >
                   My Items
-                </a>
+                </li>
                 <div className="lg:ml-16 mb-2 lg:mb-0">
-                  <button
-                    type="button"
-                    className="lg:ml-28 inline-block px-6 py-2.5 mr-2 bg-transparent text-white text-base font-medium text-xs leading-tight rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                    data-mdb-ripple="true"
-                    data-mdb-ripple-color="light"
-                  >
-                    Signin
-                  </button>
+                  {user ? (
+                    <button
+                      onClick={handleSignOut}
+                      className="btn btn-link lg:ml-28 text-white font-bold text-decoration-none ms-5"
+                    >
+                      Sign Out
+                    </button>
+                  ) : (
+                    <CustomLink to="/signin" className="text-white lg:ml-12">
+                      Sign in
+                    </CustomLink>
+                  )}
                 </div>
                 {/*  <button
                   type="button"
@@ -145,47 +173,62 @@ const Header = () => {
           <div className="md:hidden" id="mobile-menu">
             <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <a
-                href="#"
                 className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
+                as={CustomLink}
+                to="/about"
               >
                 About
               </a>
 
               <a
-                href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                as={CustomLink}
+                to="/blogs"
               >
                 Blogs
               </a>
 
               <a
-                href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                as={CustomLink}
+                to="/manageitems"
               >
                 Manage Items
               </a>
 
               <a
-                href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                as={CustomLink}
+                to="/additems"
               >
                 Add Items
               </a>
 
               <a
-                href="#"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                as={CustomLink}
+                to="/myitems"
               >
                 My Items
               </a>
-              <button
-                type="button"
-                className="mb-2 lg:mb-0 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-xs leading-tight rounded hover:text-rose-500 hover:bg-rose-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-rose-200 transition duration-150 ease-in-out"
-                data-mdb-ripple="true"
-                data-mdb-ripple-color="light"
-              >
-                Signin
-              </button>
+              {user ? (
+                <button
+                  onClick={handleSignOut}
+                  className="btn btn-link lg:ml-28 text-white font-bold text-decoration-none ms-5"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <button
+                  as={CustomLink}
+                  to="/signin"
+                  className="lg:ml-28 btn btn-link inline-block px-6 py-2.5 mr-2 bg-transparent text-white text-base font-medium text-xs leading-tight rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                  // data-mdb-ripple="true"
+                  // data-mdb-ripple-color="light"
+                >
+                  Sign in
+                </button>
+              )}
             </div>
           </div>
         )}
