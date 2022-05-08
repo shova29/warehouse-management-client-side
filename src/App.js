@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import InventoryDetail from "./Pages/Home/InventoryDetail/InventoryDetail";
 import RequireAuth from "./Pages/SignIn/RequireAuth/RequireAuth";
+import NotFound from "./Pages/Shared/NotFound/NotFound";
 function App() {
   return (
     <div className="scroll-smooth hover:scroll-auto">
@@ -25,6 +26,7 @@ function App() {
         ></Route>
         <Route path="/signup" element={<SignUP></SignUP>}></Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
+        <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer />
     </div>
