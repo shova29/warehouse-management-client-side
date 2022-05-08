@@ -6,6 +6,8 @@ import SignUP from "./Pages/SignIn/SignUp/SignUP";
 import SignIn from "./Pages/SignIn/SignIn";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import InventoryDetail from "./Pages/Home/InventoryDetail/InventoryDetail";
+import RequireAuth from "./Pages/SignIn/RequireAuth/RequireAuth";
 function App() {
   return (
     <div className="scroll-smooth hover:scroll-auto">
@@ -13,6 +15,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
+        <Route
+          path="/inventory/:inventoryId"
+          element={
+            <RequireAuth>
+              <InventoryDetail></InventoryDetail>
+            </RequireAuth>
+          }
+        ></Route>
         <Route path="/signup" element={<SignUP></SignUP>}></Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
       </Routes>
