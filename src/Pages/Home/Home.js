@@ -1,5 +1,6 @@
 import React from "react";
 import Banner from "./Banner/Banner";
+import BestSellers from "./BestSellers/BestSellers";
 import InventoryItems from "./InventoryItems/InventoryItems";
 
 const Home = () => {
@@ -41,6 +42,7 @@ const Home = () => {
           </button>
         </div>
       </div>
+      <BestSellers></BestSellers>
     </>
   );
 };

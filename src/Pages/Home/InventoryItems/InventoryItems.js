@@ -16,7 +16,7 @@ const InventoryItems = () => {
             <Loading></Loading>
           </div>
         ) : (
-          <div className="inventory-items-container mt-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="inventory-items-container container mx-auto mt-12 grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {inventoryItems.slice(0, 6).map((inventoryItem) => (
               <InventoryItem
                 key={inventoryItem._id}
