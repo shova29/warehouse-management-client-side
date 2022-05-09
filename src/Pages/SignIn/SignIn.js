@@ -19,6 +19,7 @@ const SignIn = () => {
   let from = location.state?.from?.pathname || "/";
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
   if (loading || sending) {
     return <Loading></Loading>;
@@ -60,7 +61,7 @@ const SignIn = () => {
   };
 
   return (
-    <section className="h-screen">
+    <div className="mb-16">
       <div className="container px-6 py-12 h-full">
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
@@ -122,7 +123,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

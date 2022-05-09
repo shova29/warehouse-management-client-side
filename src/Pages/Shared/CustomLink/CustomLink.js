@@ -8,13 +8,11 @@ function CustomLink({ children, to, ...props }) {
   return (
     <div>
       <Link
-        // className="me-8 lg:text-xl sm:text-sm  font-bold"
-        className="mr-8 text-base fw-bolder"
+        className="text-base font-bolder"
         style={{
-          color: match ? "lightseagreen" : "black",
+          color: match ? "white" : "inherit",
           textDecoration: match ? "underline" : "none",
-          //   fontSize: match ? "bolder" : "",
-          // textDecoration: match ? "underline" : "none",
+          textUnderlineOffset: match ? "6px" : "none",
         }}
         to={to}
         {...props}

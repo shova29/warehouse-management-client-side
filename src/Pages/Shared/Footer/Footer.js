@@ -7,8 +7,8 @@ import { FaGoogle } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 const Footer = () => {
   return (
-    <>
-      <footer className="text-center bg-gray-900 text-white">
+    <div className="min-h-screen">
+      <footer className="text-center bg-gray-900 text-white sticky top-[100vh]">
         <div className="container px-6 pt-6">
           <div>
             <form action="">
@@ -54,15 +54,6 @@ const Footer = () => {
                 </div>
               </div>
             </form>
-          </div>
-
-          <div className="mb-6">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
-              distinctio earum repellat quaerat voluptatibus placeat nam,
-              commodi optio pariatur est quia magnam eum harum corrupti dicta,
-              aliquam sequi voluptate quas.
-            </p>
           </div>
 
           <div className="grid lg:grid-cols-4 md:grid-cols-2">
@@ -236,7 +227,7 @@ const Footer = () => {
           </a>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

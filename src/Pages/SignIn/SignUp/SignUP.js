@@ -11,8 +11,8 @@ import Loading from "../../Shared/Loading/Loading";
 
 const SignUP = () => {
   const [agree, setAgree] = useState(false);
-  const [error, setError] = useState("");
-  const [createUserWithEmailAndPassword, user, loading] =
+  const [errorMessage, setErrorMessage] = useState("");
+  const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
@@ -28,6 +28,7 @@ const SignUP = () => {
 
   if (user) {
     console.log("user", user);
+    navigate("/home");
   }
   const handleSignUp = async (event) => {
     event.preventDefault();
@@ -37,16 +38,15 @@ const SignUP = () => {
     const confirmPassword = event.target.confirmPassword.value;
     if (password !== confirmPassword) {
       console.log("didnt matched");
-      setError("Your Password did not matched!");
+      setErrorMessage("Your Password did not matched!");
       return;
     }
     await createUserWithEmailAndPassword(email, password);
     await updateProfile({ displayName: name });
     console.log("Updated profile");
-    navigate("/home");
   };
   return (
-    <section className="h-screen">
+    <div className="mb-16">
       <div className="container px-6 py-12 h-full">
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
@@ -102,7 +102,7 @@ const SignUP = () => {
               </div>
 
               <div className="flex justify-between items-center mb-6">
-                <div className="form-group form-check">
+                {/* <div className="form-group form-check">
                   <input
                     onClick={() => setAgree(!agree)}
                     type="checkbox"
@@ -121,14 +121,14 @@ const SignUP = () => {
                   >
                     Agree with the terms and conditions
                   </label>
-                </div>
+                </div> */}
               </div>
-              <p className="text-rose-500 ml-2 mb-2">{error}</p>
+              <p className="text-rose-500 ml-2 mb-2">{errorMessage}</p>
               <button
                 type="submit"
-                disabled={!agree}
+                // disabled={!agree}
                 className="inline-block px-7 py-3 bg-rose-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out w-full"
-                checked
+                // checked
               >
                 Sign up
               </button>
@@ -148,7 +148,7 @@ const SignUP = () => {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

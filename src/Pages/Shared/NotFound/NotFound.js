@@ -5,7 +5,7 @@ const NotFound = () => {
   return (
     <div className="container mx-auto">
       <img
-        className="mt-20 fluid rounded w-80 h-80 mx-auto block"
+        className="mt-20 fluid rounded mx-auto block sm:w-1/2"
         src={notFound}
         alt={notFound}
       />

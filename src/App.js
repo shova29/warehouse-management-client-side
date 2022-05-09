@@ -10,6 +10,8 @@ import InventoryDetail from "./Pages/Home/InventoryDetail/InventoryDetail";
 import RequireAuth from "./Pages/SignIn/RequireAuth/RequireAuth";
 import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
+import About from "./Pages/About/About";
+import Blogs from "./Pages/Blogs/Blogs";
 function App() {
   return (
     <div className="scroll-smooth hover:scroll-auto">
@@ -25,6 +27,8 @@ function App() {
             </RequireAuth>
           }
         ></Route>
+        <Route path="/about" element={<About></About>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/signup" element={<SignUP></SignUP>}></Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>

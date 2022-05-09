@@ -13,12 +13,8 @@ const Header = () => {
     signOut(auth);
   };
   return (
-    <nav className="bg-rose-600 shadow-md">
-      <div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
-        as={CustomLink}
-        to="/"
-      >
+    <nav className="bg-rose-600 shadow-md" as={CustomLink} to="/">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           <div className="flex items-center">
             <div className="ml-6 flex-shrink-0">
@@ -31,53 +27,46 @@ const Header = () => {
               />
             </div>
             <div className="hidden md:block">
-              <div className="ml-12 flex items-baseline space-x-4">
-                <li
-                  className="hover:bg-text-700 text-white text-base px-3 py-2 mr-16 rounded-md text-sm font-medium"
-                  as={CustomLink}
+              <div className="ml-12 flex justify-between items-center space-x-4">
+                <p className="hover:bg-text-700 text-white text-base px-3 py-2 xl:mr-16 rounded-md text-sm font-medium no-underline">
+                  Perfume Pungent
+                </p>
+                <CustomLink
+                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 xl:ml-6 rounded-md text-sm font-medium"
                   to="/home"
                 >
-                  Perfume Pungent
-                </li>
-
-                <li
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 ml-16 rounded-md text-sm font-medium"
-                  as={CustomLink}
+                  Home
+                </CustomLink>
+                <CustomLink
+                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   to="/about"
                 >
                   About
-                </li>
-                <li
+                </CustomLink>
+                <CustomLink
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  as={CustomLink}
                   to="/blogs"
                 >
                   Blogs
-                </li>
-
-                <li
+                </CustomLink>
+                <CustomLink
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  as={CustomLink}
                   to="/manageitems"
                 >
                   Manage Items
-                </li>
-
-                <li
-                  className="text-gray-300 hover:bg-text-700  text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  as={CustomLink}
+                </CustomLink>
+                <CustomLink
+                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   to="/additems"
                 >
                   Add Items
-                </li>
-
-                <li
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 lg:mr-16 rounded-md text-sm font-medium"
-                  as={CustomLink}
+                </CustomLink>
+                <CustomLink
+                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
                   to="/myitems"
                 >
                   My Items
-                </li>
+                </CustomLink>
                 <div className="lg:ml-16 mb-2 lg:mb-0">
                   {user ? (
                     <button
@@ -88,30 +77,18 @@ const Header = () => {
                     </button>
                   ) : (
                     <CustomLink to="/signin" className="text-white lg:ml-12">
-                      Sign in
+                      <li
+                        className="btn btn-link ml-22 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-base leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="light"
+                      >
+                        Sign In
+                      </li>{" "}
                     </CustomLink>
                   )}
                 </div>
-                {/*  <button
-                  type="button"
-                  className="ml-22 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-xs leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                  data-mdb-ripple="true"
-                  data-mdb-ripple-color="light"
-                >
-                  Login
-                </button> */}
               </div>
             </div>
-            {/*  <div class="flex items-center lg:ml-56 mb-2 lg:mb-0">
-              <button
-                type="button"
-                className="inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-xs leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
-                data-mdb-ripple="true"
-                data-mdb-ripple-color="light"
-              >
-                Login
-              </button>
-            </div> */}
           </div>
           <div className="-mr-2 flex md:hidden">
             <button
@@ -171,8 +148,62 @@ const Header = () => {
       >
         {(ref) => (
           <div className="md:hidden" id="mobile-menu">
-            <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <a
+            <div ref={ref} className="ml-6 px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <CustomLink
+                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to="/home"
+              >
+                Home
+              </CustomLink>
+              <CustomLink
+                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to="/about"
+              >
+                About
+              </CustomLink>
+              <CustomLink
+                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to="/blogs"
+              >
+                Blogs
+              </CustomLink>
+              <CustomLink
+                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to="/manageitems"
+              >
+                Manage Items
+              </CustomLink>
+              <CustomLink
+                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to="/additems"
+              >
+                Add Items
+              </CustomLink>
+              <CustomLink
+                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                to="/myitems"
+              >
+                My Items
+              </CustomLink>
+              {user ? (
+                <button
+                  onClick={handleSignOut}
+                  className="btn btn-link lg:ml-28 text-white font-bold text-decoration-none ms-5"
+                >
+                  Sign Out
+                </button>
+              ) : (
+                <CustomLink to="/signin" className="text-white lg:ml-12">
+                  <li
+                    className="btn btn-link ml-22 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-base leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light"
+                  >
+                    Sign In
+                  </li>{" "}
+                </CustomLink>
+              )}
+              {/* <a
                 className="hover:bg-gray-700 text-white block px-3 py-2 rounded-md text-base font-medium"
                 as={CustomLink}
                 to="/about"
@@ -228,7 +259,7 @@ const Header = () => {
                 >
                   Sign in
                 </button>
-              )}
+              )} */}
             </div>
           </div>
         )}
