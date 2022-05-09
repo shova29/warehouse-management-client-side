@@ -12,6 +12,7 @@ import NotFound from "./Pages/Shared/NotFound/NotFound";
 import Footer from "./Pages/Shared/Footer/Footer";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
+import AddItem from "./Pages/AddItem/AddItem";
 function App() {
   return (
     <div className="scroll-smooth hover:scroll-auto">
@@ -24,6 +25,14 @@ function App() {
           element={
             <RequireAuth>
               <InventoryDetail></InventoryDetail>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/additem"
+          element={
+            <RequireAuth>
+              <AddItem></AddItem>
             </RequireAuth>
           }
         ></Route>

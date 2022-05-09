@@ -57,9 +57,9 @@ const Header = () => {
                 </CustomLink>
                 <CustomLink
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  to="/additems"
+                  to="/additem"
                 >
-                  Add Items
+                  Add Item
                 </CustomLink>
                 <CustomLink
                   className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
@@ -175,9 +175,9 @@ const Header = () => {
               </CustomLink>
               <CustomLink
                 className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                to="/additems"
+                to="/additem"
               >
-                Add Items
+                Add Item
               </CustomLink>
               <CustomLink
                 className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
