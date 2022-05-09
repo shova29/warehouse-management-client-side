@@ -9,6 +9,7 @@ const InventoryDetail = () => {
   const customId = "custom-id-yes";
   let { quantity } = inventory;
 
+  // handle Restock quantity
   const handleRestock = (event) => {
     event.preventDefault();
     let addQuantity = parseInt(event.target.quantity.value);
@@ -41,6 +42,32 @@ const InventoryDetail = () => {
     }
   };
 
+  // handle Delivered
+  const handleDelivered = () => {
+    if (quantity > 1) {
+      const quantity = parseInt(inventory.quantity) - 1;
+      const updatedQuantity = { quantity };
+      const url = `http://localhost:5000/inventory/${inventoryId}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(updatedQuantity),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const proceed = window.confirm("Want to Delivered?");
+          if (proceed) {
+            setReload(!reload);
+            toast("Successfully Delivered!", {
+              toastId: customId,
+            });
+          }
+        });
+    }
+  };
   return (
     <div className="container my-24 px-12 mx-auto">
       <section className="mb-32 text-gray-800 text-center md:text-left">
@@ -87,6 +114,7 @@ const InventoryDetail = () => {
                   </span>
                 </p>
                 <button
+                  onClick={() => handleDelivered()}
                   type="button"
                   className="inline-block px-7 py-3 bg-rose-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
                 >
