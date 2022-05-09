@@ -13,6 +13,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
 import AddItem from "./Pages/AddItem/AddItem";
+import ManageItems from "./Pages/ManageItems/ManageItems";
 function App() {
   return (
     <div className="scroll-smooth hover:scroll-auto">
@@ -33,6 +34,14 @@ function App() {
           element={
             <RequireAuth>
               <AddItem></AddItem>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/manageitems"
+          element={
+            <RequireAuth>
+              <ManageItems></ManageItems>
             </RequireAuth>
           }
         ></Route>

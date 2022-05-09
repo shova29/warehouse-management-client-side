@@ -11,7 +11,7 @@ const useInventoryItems = () => {
         setInventoryItems(data);
       });
   }, []);
-  return { inventoryItems, spinner };
+  return { inventoryItems, setInventoryItems, spinner };
 };
 
 export default useInventoryItems;

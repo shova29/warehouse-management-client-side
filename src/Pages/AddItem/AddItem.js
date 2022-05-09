@@ -7,10 +7,11 @@ import auth from "../../firebase.init";
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
+  const customId = "custom-id-yes";
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     data.email = user?.email;
     const url = `http://localhost:5000/inventory`;
     fetch(url, {
@@ -22,10 +23,12 @@ const AddItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        // console.log(result);
         if (result) {
           reset();
-          toast.success("Your Items is added successfully!!");
+          toast.success("Your Items is added successfully!!", {
+            toastId: customId,
+          });
         }
       });
   };
@@ -233,7 +236,7 @@ const AddItem = () => {
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               id="exampleInput8"
-              placeholder="Photo URL"
+              placeholder="Image URL"
               type="text"
               {...register("image", { required: true })}
             />
