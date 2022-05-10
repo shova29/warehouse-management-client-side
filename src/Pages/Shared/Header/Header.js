@@ -13,72 +13,73 @@ const Header = () => {
     signOut(auth);
   };
   return (
-    <nav className="bg-rose-600 shadow-md" as={CustomLink} to="/">
+    <nav className="bg-rose-600 shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18">
           <div className="flex items-center">
             <div className="ml-6 flex-shrink-0">
-              <img
-                className="h-16 w-16"
-                src={logo}
-                alt="logo"
-                as={CustomLink}
-                to="/home"
-              />
+              <CustomLink to="/home">
+                <img className="h-16 w-16" src={logo} alt="logo" />
+              </CustomLink>
             </div>
             <div className="hidden md:block">
               <div className="ml-12 flex justify-between items-center space-x-4">
-                <p className="hover:bg-text-700 text-white text-base px-3 py-2 xl:mr-16 rounded-md text-sm font-medium no-underline">
+                <p className="hover:bg-text-700 text-white text-base px-3 py-2 xl:mr-12 rounded-md font-medium no-underline">
                   Perfume Pungent
                 </p>
                 <CustomLink
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 xl:ml-6 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 xl:ml-4 rounded-md font-medium"
                   to="/home"
                 >
                   Home
                 </CustomLink>
                 <CustomLink
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
                   to="/about"
                 >
                   About
                 </CustomLink>
                 <CustomLink
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
                   to="/blogs"
                 >
                   Blogs
                 </CustomLink>
-                <CustomLink
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  to="/manageitems"
-                >
-                  Manage Items
-                </CustomLink>
-                <CustomLink
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  to="/additem"
-                >
-                  Add Item
-                </CustomLink>
-                <CustomLink
-                  className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                  to="/myitems"
-                >
-                  My Items
-                </CustomLink>
+                {user && (
+                  <>
+                    <CustomLink
+                      className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
+                      to="/manageitems"
+                    >
+                      Manage Items
+                    </CustomLink>
+                    <CustomLink
+                      className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
+                      to="/additem"
+                    >
+                      Add Item
+                    </CustomLink>
+                    <CustomLink
+                      className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
+                      to="/myitems"
+                    >
+                      My Items
+                    </CustomLink>
+                  </>
+                )}
+
                 <div className="lg:ml-16 mb-2 lg:mb-0">
                   {user ? (
                     <button
                       onClick={handleSignOut}
-                      className="btn btn-link lg:ml-28 text-white font-bold text-decoration-none ms-5"
+                      className="btn btn-link lg:ml-20 text-white text-sm font-bold text-decoration-none ms-5"
                     >
                       Sign Out
                     </button>
                   ) : (
-                    <CustomLink to="/signin" className="text-white lg:ml-12">
+                    <CustomLink to="/signin" className="text-white lg:ml-80">
                       <li
-                        className="btn btn-link ml-22 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-base leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                        className="btn btn-link ml-22 inline-block px-4 py-2.5 mr-2 bg-transparent text-white font-medium text-sm leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
                         data-mdb-ripple="true"
                         data-mdb-ripple-color="light"
                       >
@@ -150,52 +151,56 @@ const Header = () => {
           <div className="md:hidden" id="mobile-menu">
             <div ref={ref} className="ml-6 px-2 pt-2 pb-3 space-y-1 sm:px-3">
               <CustomLink
-                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
                 to="/home"
               >
                 Home
               </CustomLink>
               <CustomLink
-                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
                 to="/about"
               >
                 About
               </CustomLink>
               <CustomLink
-                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
                 to="/blogs"
               >
                 Blogs
               </CustomLink>
-              <CustomLink
-                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                to="/manageitems"
-              >
-                Manage Items
-              </CustomLink>
-              <CustomLink
-                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                to="/additem"
-              >
-                Add Item
-              </CustomLink>
-              <CustomLink
-                className="text-gray-300 hover:bg-text-700 text-base hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                to="/myitems"
-              >
-                My Items
-              </CustomLink>
+              {user && (
+                <>
+                  <CustomLink
+                    className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md  font-medium"
+                    to="/manageitems"
+                  >
+                    Manage Items
+                  </CustomLink>
+                  <CustomLink
+                    className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
+                    to="/additem"
+                  >
+                    Add Item
+                  </CustomLink>
+                  <CustomLink
+                    className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md font-medium"
+                    to="/myitems"
+                  >
+                    My Items
+                  </CustomLink>
+                </>
+              )}
               {user ? (
                 <button
                   onClick={handleSignOut}
-                  className="btn btn-link lg:ml-28 text-white font-bold text-decoration-none ms-5"
+                  className="btn btn-link lg:ml-28 text-white text-sm font-bold text-decoration-none"
                 >
                   Sign Out
                 </button>
               ) : (
-                <CustomLink to="/signin" className="text-white lg:ml-12">
+                <CustomLink to="/signin" className="text-white lg:ml-28">
                   <li
-                    className="btn btn-link ml-22 inline-block px-6 py-2.5 mr-2 bg-transparent text-white font-medium text-base leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                    className="btn btn-link inline-block px-3 py-2 mr-2 bg-transparent text-white font-medium text-sm leading-tight uppercase rounded hover:text-rose-500 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
                     data-mdb-ripple="true"
                     data-mdb-ripple-color="light"
                   >

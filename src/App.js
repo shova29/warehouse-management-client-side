@@ -2,7 +2,6 @@ import "./App.css";
 import Header from "./Pages/Shared/Header/Header";
 import Home from "./Pages/Home/Home";
 import { Route, Routes } from "react-router-dom";
-import SignUP from "./Pages/SignIn/SignUp/SignUP";
 import SignIn from "./Pages/SignIn/SignIn";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -14,6 +13,8 @@ import About from "./Pages/About/About";
 import Blogs from "./Pages/Blogs/Blogs";
 import AddItem from "./Pages/AddItem/AddItem";
 import ManageItems from "./Pages/ManageItems/ManageItems";
+import MyItems from "./Pages/MyItems/MyItems";
+import SignUp from "./Pages/SignIn/SignUp/SignUp";
 function App() {
   return (
     <div className="scroll-smooth hover:scroll-auto">
@@ -30,6 +31,14 @@ function App() {
           }
         ></Route>
         <Route
+          path="/manageitems"
+          element={
+            <RequireAuth>
+              <ManageItems></ManageItems>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
           path="/additem"
           element={
             <RequireAuth>
@@ -38,16 +47,16 @@ function App() {
           }
         ></Route>
         <Route
-          path="/manageitems"
+          path="/myitems"
           element={
             <RequireAuth>
-              <ManageItems></ManageItems>
+              <MyItems></MyItems>
             </RequireAuth>
           }
         ></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/signup" element={<SignUP></SignUP>}></Route>
+        <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="/signin" element={<SignIn></SignIn>}></Route>
         <Route path="*" element={<NotFound></NotFound>}></Route>
       </Routes>

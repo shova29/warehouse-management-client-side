@@ -3,8 +3,9 @@ import {
   useSignInWithGithub,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
+import useToken from "../../../hooks/useToken";
 import Loading from "../../Shared/Loading/Loading";
 
 const SocialSignIn = () => {
@@ -12,7 +13,10 @@ const SocialSignIn = () => {
     useSignInWithGoogle(auth);
   const [signInWithGithub, githubUser, loadingForGithub, githubError] =
     useSignInWithGithub(auth);
+  const [token] = useToken(googleUser || githubUser);
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   let errorElement;
   if (googleError || githubError) {
     errorElement = (
@@ -26,8 +30,8 @@ const SocialSignIn = () => {
     return <Loading></Loading>;
   }
 
-  if (googleUser || githubUser) {
-    navigate("/home");
+  if (token) {
+    navigate(from, { replace: true });
   }
   return (
     <div className="mb-12">

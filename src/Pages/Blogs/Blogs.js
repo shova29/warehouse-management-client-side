@@ -1,11 +1,14 @@
 import React from "react";
+import blog1 from "../../Assets/Images/blogs/blog-1.png";
+import blog2 from "../../Assets/Images/blogs/blog-2.png";
+import blog3 from "../../Assets/Images/blogs/blog-3.png";
 
 const Blogs = () => {
   return (
     <div className="container my-24 px-6 mx-auto">
       <section className="mb-32 text-gray-800 text-center md:text-left">
         <h2 className="text-3xl font-bold mb-12 text-center">
-          Latest articles
+          Latest <span className="text-rose-600">Articles</span>
         </h2>
 
         <div className="flex flex-wrap mb-6">
@@ -15,7 +18,7 @@ const Blogs = () => {
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
             >
-              <img src="" className="w-full" alt="" />
+              <img src={blog1} className="w-full" alt={blog1} />
               <a href="#!">
                 <div
                   className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
@@ -45,7 +48,7 @@ const Blogs = () => {
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
             >
-              <img src="" className="w-full" alt="" />
+              <img src={blog2} className="w-full" alt={blog2} />
               <a href="#!">
                 <div
                   className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"
@@ -74,7 +77,7 @@ const Blogs = () => {
               data-mdb-ripple="true"
               data-mdb-ripple-color="light"
             >
-              <img src="" className="w-full" alt="" />
+              <img src={blog3} className="w-full" alt={blog3} />
               <a href="#!">
                 <div
                   className="absolute top-0 right-0 bottom-0 left-0 w-full h-full overflow-hidden bg-fixed opacity-0 hover:opacity-100 transition duration-300 ease-in-out"

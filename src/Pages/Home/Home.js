@@ -1,9 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import BestSellers from "./BestSellers/BestSellers";
 import InventoryItems from "./InventoryItems/InventoryItems";
+import WhyPungent from "./WhyPungent/WhyPungent";
 
 const Home = () => {
+  const navigate = useNavigate();
   return (
     <>
       <svg
@@ -35,14 +38,16 @@ const Home = () => {
       <div className="mt-12 flex space-x-2 justify-center mb-12">
         <div>
           <button
+            onClick={() => navigate("/manageitems")}
             type="button"
-            className="inline-block px-6 py-2.5 bg-rose-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
+            className="motion-safe:animate-bounce  duration-700 inline-block px-6 py-2.5 bg-rose-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
           >
             Manage Inventories
           </button>
         </div>
       </div>
       <BestSellers></BestSellers>
+      <WhyPungent></WhyPungent>
     </>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import useInventoryDetail from "../../../hooks/useInventoryDetail";
 
@@ -7,6 +7,7 @@ const InventoryDetail = () => {
   const { inventoryId } = useParams();
   const { inventory, reload, setReload } = useInventoryDetail(inventoryId);
   const customId = "custom-id-yes";
+  const navigate = useNavigate();
   let { quantity } = inventory;
 
   // handle Restock quantity
@@ -35,7 +36,7 @@ const InventoryDetail = () => {
           console.log(data);
           event.target.reset();
           setReload(!reload);
-          toast.success("Successfully Restock the Quantity!", {
+          toast.success("Successfully Restock the Items!", {
             toastId: customId,
           });
         });
@@ -145,6 +146,17 @@ const InventoryDetail = () => {
           </div>
         </div>
       </section>
+      <div className="mt-12 flex space-x-2 justify-center mb-12">
+        <div>
+          <button
+            onClick={() => navigate("/manageitems")}
+            type="button"
+            className="inline-block px-6 py-2.5 bg-rose-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
+          >
+            Manage Inventories
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

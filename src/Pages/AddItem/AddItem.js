@@ -192,7 +192,7 @@ const AddItem = () => {
         m-0
         focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               id="exampleInput8"
-              placeholder="Price"
+              placeholder="Price in Dollar"
               type="number"
               {...register("price", { required: true })}
             />
@@ -241,7 +241,7 @@ const AddItem = () => {
               {...register("image", { required: true })}
             />
           </div>
-          <div className="form-group mb-6">
+          {/* <div className="form-group mb-6">
             <input
               className="form-control block
         w-full
@@ -262,7 +262,7 @@ const AddItem = () => {
               type="number"
               {...register("ratings", { required: true })}
             />
-          </div>
+          </div> */}
           <button
             type="submit"
             className="

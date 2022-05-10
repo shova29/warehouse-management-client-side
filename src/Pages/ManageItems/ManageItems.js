@@ -2,10 +2,12 @@ import React from "react";
 import useInventoryItems from "../../hooks/useInventoryItems";
 import { AiFillDelete } from "react-icons/ai";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const ManageItems = () => {
   const { inventoryItems, setInventoryItems } = useInventoryItems();
   const customId = "custom-id-yes";
+  const navigate = useNavigate();
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete a item?");
     if (proceed) {
@@ -28,6 +30,17 @@ const ManageItems = () => {
   };
   return (
     <div className="container mx-auto relative overflow-x-auto  mb-16">
+      <div className="mt-12 flex space-x-2 justify-end mr-56 mb-12">
+        <div>
+          <button
+            onClick={() => navigate("/additem")}
+            type="button"
+            className="inline-block px-6 py-2.5 bg-rose-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
+          >
+            Add New Item
+          </button>
+        </div>
+      </div>
       <table className="shadow-md sm:rounded-lg mt-16 mx-auto min-w text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
@@ -52,7 +65,7 @@ const ManageItems = () => {
           </tr>
         </thead>
         {inventoryItems?.map((inventoryItem) => (
-          <tbody>
+          <tbody key={inventoryItem._id}>
             <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
               <th
                 scope="row"

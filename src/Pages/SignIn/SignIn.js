@@ -9,6 +9,8 @@ import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import SocialSignIn from "./SocialSignIn/SocialSignIn";
 import Loading from "../Shared/Loading/Loading";
+import axios from "axios";
+import useToken from "../../hooks/useToken";
 
 const SignIn = () => {
   const emailRef = useRef("");
@@ -21,13 +23,16 @@ const SignIn = () => {
     useSignInWithEmailAndPassword(auth);
 
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  const [token] = useToken(user);
+
   if (loading || sending) {
     return <Loading></Loading>;
   }
 
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
   }
+
   let errorElement;
   if (error) {
     console.log(error?.message);
@@ -37,11 +42,17 @@ const SignIn = () => {
       </p>
     );
   }
-  const handleSignIn = (event) => {
+  const handleSignIn = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
-    signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post("http://localhost:5000/signin", {
+      email,
+    });
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
+    console.log(data);
   };
   const navigateSignUp = (event) => {
     navigate("/signup");

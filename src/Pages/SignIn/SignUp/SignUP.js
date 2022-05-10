@@ -8,13 +8,16 @@ import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialSignIn from "../SocialSignIn/SocialSignIn";
 import Loading from "../../Shared/Loading/Loading";
+import useToken from "../../../hooks/useToken";
 
-const SignUP = () => {
+const SignUp = () => {
   const [agree, setAgree] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
+  const [token] = useToken(user);
+
   const navigate = useNavigate();
   let errorElement;
 
@@ -26,8 +29,8 @@ const SignUP = () => {
     return <Loading></Loading>;
   }
 
-  if (user) {
-    console.log("user", user);
+  if (token) {
+    console.log("token", token);
     navigate("/home");
   }
   const handleSignUp = async (event) => {
@@ -152,4 +155,4 @@ const SignUP = () => {
   );
 };
 
-export default SignUP;
+export default SignUp;
