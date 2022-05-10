@@ -21,7 +21,7 @@ const InventoryItem = ({ inventoryItem }) => {
           </p>
           <p className="text-gray-700 text-sm font-bold mb-4 mt-2">
             Price:
-            <span className="text-rose-700"> ${price}</span>
+            <span className="text-rose-700"> $ {price}</span>
           </p>
           <p className="text-gray-700 text-sm font-bold mb-4">
             Quantity:

@@ -84,19 +84,21 @@ const InventoryDetail = () => {
             <div className="container mx-auto grow-0 shrink-0 basis-auto w-full lg:w-6/12 xl:w-8/12">
               <div className="px-6 py-12 md:px-12">
                 <h2 className="text-3xl font-bold mb-6 pb-2">
-                  {inventory.name}
+                  {inventory?.name}
                 </h2>
                 <p className="text-gray-800 mb-2 pb-2 font-bold">
                   Description:{" "}
-                  <span className="text-gray-500">{inventory.description}</span>
+                  <span className="text-gray-500">
+                    {inventory?.description}
+                  </span>
                 </p>
                 <p className="text-gray-700 text-sm font-bold mb-2">
                   Id:
-                  <span className="text-rose-700"> {inventory._id}</span>
+                  <span className="text-rose-700"> {inventory?._id}</span>
                 </p>
                 <p className="text-gray-700 text-sm font-bold mb-2">
                   Price:
-                  <span className="text-rose-700"> ${inventory.price}</span>
+                  <span className="text-rose-700"> $ {inventory?.price}</span>
                 </p>
                 <p className="text-gray-700 text-sm font-bold mb-4">
                   Quantity:
@@ -111,7 +113,7 @@ const InventoryDetail = () => {
                   Supplier Name:
                   <span className="text-rose-700">
                     {" "}
-                    {inventory.supplierName}
+                    {inventory?.supplierName}
                   </span>
                 </p>
                 <button

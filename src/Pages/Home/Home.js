@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import BestSellers from "./BestSellers/BestSellers";
 import InventoryItems from "./InventoryItems/InventoryItems";
+import OurSupplier from "./OurSupplier/OurSupplier";
 import WhyPungent from "./WhyPungent/WhyPungent";
 
 const Home = () => {
@@ -34,6 +35,7 @@ const Home = () => {
         ></path>
       </svg>
       <Banner></Banner>
+      <OurSupplier></OurSupplier>
       <InventoryItems></InventoryItems>
       <div className="mt-12 flex space-x-2 justify-center mb-12">
         <div>
