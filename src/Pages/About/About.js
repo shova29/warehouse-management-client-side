@@ -19,7 +19,7 @@ const About = () => {
                   About <span className="text-rose-600">Us</span>
                 </h2>
 
-                <p className="text-gray-500 mb-0">
+                <p className="text-gray-500 mb-0 text-justify">
                   Perfume Pungent is a well established retailer of beauty and
                   fragrance related products. We offer you strong range of
                   perfume brands and we are one of the largest stockiest of

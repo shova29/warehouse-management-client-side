@@ -16,7 +16,7 @@ const MyItems = () => {
     const getItems = async () => {
       console.log(user.email);
       const email = user?.email;
-      const url = `http://localhost:5000/item?email=${email}`;
+      const url = `https://fast-crag-27449.herokuapp.com/item?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setItems(data);
@@ -50,7 +50,7 @@ const MyItems = () => {
     }
   };
   return (
-    <div className="container mx-auto relative overflow-x-auto  mb-16">
+    <div className="container mx-auto relative overflow-x-auto  mb-28">
       <table className="shadow-md sm:rounded-lg mt-16 mx-auto min-w text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
@@ -73,7 +73,7 @@ const MyItems = () => {
               Quantity
             </th>
             <th scope="col" className="px-6 py-3">
-              Delete
+              Action
             </th>
           </tr>
         </thead>

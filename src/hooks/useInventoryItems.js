@@ -4,7 +4,7 @@ const useInventoryItems = () => {
   const [inventoryItems, setInventoryItems] = useState([]);
   const [spinner, setSpinner] = useState(true);
   useEffect(() => {
-    fetch("http://localhost:5000/inventory")
+    fetch("https://fast-crag-27449.herokuapp.com/inventory")
       .then((response) => response.json())
       .then((data) => {
         setSpinner(false);

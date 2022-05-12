@@ -1,4 +1,3 @@
-import axios from "axios";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
@@ -13,7 +12,7 @@ const AddItem = () => {
   const onSubmit = (data) => {
     // console.log(data);
     data.email = user?.email;
-    const url = `http://localhost:5000/inventory`;
+    const url = `https://fast-crag-27449.herokuapp.com/inventory`;
     fetch(url, {
       method: "POST",
       headers: {
@@ -34,8 +33,8 @@ const AddItem = () => {
   };
   return (
     <div className="mb-16">
-      <h2 className="mt-8 text-center text-2xl">
-        Please Add a <span className="text-rose-600"> Inventory Item</span>
+      <h2 className="mt-8 text-center text-2xl font-bold">
+        Please Add An <span className="text-rose-600"> Inventory Item</span>
       </h2>
       <div className="block p-6 rounded-lg shadow-lg bg-white max-w-md mx-auto mt-4">
         <form onSubmit={handleSubmit(onSubmit)}>

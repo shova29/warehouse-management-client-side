@@ -2,8 +2,10 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import BestSellers from "./BestSellers/BestSellers";
+import Contact from "./Contact/Contact";
 import InventoryItems from "./InventoryItems/InventoryItems";
 import OurSupplier from "./OurSupplier/OurSupplier";
+import SoldItems from "./SoldItems/SoldItems";
 import WhyPungent from "./WhyPungent/WhyPungent";
 
 const Home = () => {
@@ -37,19 +39,38 @@ const Home = () => {
       <Banner></Banner>
       <OurSupplier></OurSupplier>
       <InventoryItems></InventoryItems>
-      <div className="mt-12 flex space-x-2 justify-center mb-12">
-        <div>
-          <button
-            onClick={() => navigate("/manageitems")}
-            type="button"
-            className="motion-safe:animate-bounce  duration-700 inline-block px-6 py-2.5 bg-rose-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
-          >
-            Manage Inventories
-          </button>
+      <div className="container mx-auto">
+        <div className="text-center text-gray-800 w-full py-16 px-6 space-x-4">
+          <div className="grid lg:flex justify-center items-center">
+            <div className="text-center mt-8 lg:mt-0 ">
+              <a
+                onClick={() => navigate("/inventory")}
+                className="inline-block px-4 py-3  mr-2  bg-transparent text-black-600 font-medium text-sm leading-snug uppercase rounded hover:text-rose-700 hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:ring-0 active:bg-gray-200 transition duration-150 ease-in-out"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+                href="#!"
+                role="button"
+              >
+                See All Inventories
+              </a>
+              <a
+                onClick={() => navigate("/manageitems")}
+                className="inline-block px-4 py-3 sm:mt-6 bg-rose-600 text-white font-medium text-sm leading-snug uppercase rounded shadow-md hover:bg-rose-700 hover:shadow-lg focus:bg-rose-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-rose-800 active:shadow-lg transition duration-150 ease-in-out"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+                href="#!"
+                role="button"
+              >
+                Manage Inventories
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <BestSellers></BestSellers>
+      <SoldItems></SoldItems>
       <WhyPungent></WhyPungent>
+      <Contact></Contact>
     </>
   );
 };

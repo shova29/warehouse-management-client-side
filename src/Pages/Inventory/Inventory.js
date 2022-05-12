@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const InventoryItem = ({ inventoryItem }) => {
+const Inventory = ({ inventoryItem }) => {
   const { _id, name, image, shortDescription, price, quantity, supplierName } =
     inventoryItem;
   const navigate = useNavigate();
@@ -9,7 +9,7 @@ const InventoryItem = ({ inventoryItem }) => {
     navigate(`/inventory/${id}`);
   };
   return (
-    <div className="container mx-auto flex justify-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
+    <div className="px-4 container mx-auto flex justify-center transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110  duration-300">
       <div className="overflow-x-hidden  rounded-lg shadow-lg bg-white min-w-full">
         <a href="#!" className="flex flex-col items-center">
           <img className="rounded-t-lg pt-4 w-2/5" src={image} alt="" />
@@ -49,4 +49,4 @@ const InventoryItem = ({ inventoryItem }) => {
   );
 };
 
-export default InventoryItem;
+export default Inventory;

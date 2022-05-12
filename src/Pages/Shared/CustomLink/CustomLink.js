@@ -10,7 +10,7 @@ function CustomLink({ children, to, ...props }) {
       <Link
         className="text-base font-bolder"
         style={{
-          color: match ? "white" : "inherit",
+          color: match ? "white" : "black",
           textDecoration: match ? "underline" : "none",
           textUnderlineOffset: match ? "6px" : "none",
         }}

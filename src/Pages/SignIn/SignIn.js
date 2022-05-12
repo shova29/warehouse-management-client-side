@@ -47,14 +47,17 @@ const SignIn = () => {
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
     await signInWithEmailAndPassword(email, password);
-    const { data } = await axios.post("http://localhost:5000/signin", {
-      email,
-    });
+    const { data } = await axios.post(
+      "https://fast-crag-27449.herokuapp.com/signin",
+      {
+        email,
+      }
+    );
     localStorage.setItem("accessToken", data.accessToken);
-    navigate(from, { replace: true });
-    console.log(data);
+    // navigate(from, { replace: true });
+    // console.log(data);
   };
-  const navigateSignUp = (event) => {
+  const navigateSignUp = () => {
     navigate("/signup");
   };
   const resetPassword = async () => {
@@ -75,8 +78,8 @@ const SignIn = () => {
     <div className="mb-16">
       <div className="container px-6 py-12 h-full">
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
-          <div className="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-            <img src={signin} className="ml-12 w-96" alt={signin} />
+          <div className="md:w-8/12 lg:w-6/12 sm:w-5/12 mb-12 md:mb-0">
+            <img src={signin} className="w-fit" alt={signin} />
           </div>
           <div className="md:w-8/12 lg:w-5/12 lg:ml-12">
             <h3 className="text-2xl text-rose-500 text-center font-bold mb-4">
@@ -88,8 +91,8 @@ const SignIn = () => {
                 <input
                   type="email"
                   ref={emailRef}
-                  className=" block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                  placeholder="Email address"
+                  className=" block w-full px-4 py-2 text-sm  font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  placeholder="Email Address"
                   required
                 />
               </div>
@@ -97,7 +100,7 @@ const SignIn = () => {
                 <input
                   type="password"
                   ref={passwordRef}
-                  className=" block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  className=" block w-full px-4 py-2 text-sm font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                   placeholder="Password"
                   required
                 />
@@ -129,7 +132,6 @@ const SignIn = () => {
                 Reset Password
               </button>
             </p>
-
             <SocialSignIn></SocialSignIn>
           </div>
         </div>

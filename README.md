@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Perfume Pungent
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a MERN full-stack Project based on MERN full-stack [Click here for Live Site Link](https://warehouse-management-web-2b489.web.app/)
 
-## Available Scripts
+Can also check Server Site Repo [Click here for Server Site Repo](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-shova29)
 
-In the project directory, you can run:
+## Features and Functionality:
 
-### `npm start`
+- This is a full-stack website about Perfume Pungent Warehouse management website where multiple inventory items that are managed.
+- The Home page is consists of header section, banner section, our beloved seller section, inventory items section, top rated supplier's section, sold item's section, why perfume Ppungent section, contact us section and footer section.
+- There are available 2 categories of the perfume. One is Men's Perfume and another is Women's Perfume.
+- The Inventory page contains all the stocked items of our warehouse that.
+- The About page provides the information about the Perfume Pungent Warehouse.
+- The Blogs page contains three questions and their answers.
+- User can Create an Account using email/password-based authentication and also social signin authentication. Email will be verified.
+- User can Create an Account and Signin via Firebase authentication.
+- User can also Signin via Google signin or Github signin and also reset the password.
+- Clicking on the stock update button it will take user to inventory/:id route where can be restocked the items and also delieverd the items.
+- Clicking on the Manage Inventories button it will take manage inventory page where an items can be deleted.
+- There is a button named add new item on the Manage Inventories page. Clicking on the Add New Item button it will take add items page where item can be added.
+- Here used mongodb atlas noSQL database for hosting inventory data.
+- Fully responsive web app.
+- Highly Protected Route.
+- Used NoSQL Database
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technology Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Font-end
 
-### `npm test`
+1. React JS
+2. Tailwind tw-elements
+3. React Router
+4. Firebase Authentication
+5. React Spring
+6. React Toastify
+7. React Icons
+8. react-hook-form
+9. Axios
+10. Swiper
+11. React-rating
+12. Animate.css
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Back-end
 
-### `npm run build`
+1. Node js
+2. MongoDB
+3. Express js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Hosting
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Client Side Hosted by Firebase
+- Server site hosted by Heroku

@@ -14,16 +14,16 @@ const InventoryDetail = () => {
   const handleRestock = (event) => {
     event.preventDefault();
     let addQuantity = parseInt(event.target.quantity.value);
-    if (addQuantity < 1) {
+    if (addQuantity < 0) {
       toast.error("Please Add Positive Quantity", {
         toastId: customId,
       });
       return;
     }
-    if (addQuantity >= 1) {
+    if (addQuantity >= 0) {
       quantity = quantity + addQuantity;
       const updatedQuantity = { quantity };
-      const url = `http://localhost:5000/inventory/${inventoryId}`;
+      const url = `https://fast-crag-27449.herokuapp.com/inventory/${inventoryId}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -45,10 +45,10 @@ const InventoryDetail = () => {
 
   // handle Delivered
   const handleDelivered = () => {
-    if (quantity > 1) {
-      const quantity = parseInt(inventory.quantity) - 1;
+    if (quantity >= 0) {
+      const quantity = parseInt(inventory?.quantity) - 1;
       const updatedQuantity = { quantity };
-      const url = `http://localhost:5000/inventory/${inventoryId}`;
+      const url = `https://fast-crag-27449.herokuapp.com/inventory/${inventoryId}`;
       fetch(url, {
         method: "PUT",
         headers: {

@@ -4,12 +4,12 @@ import { AiOutlineDollar } from "react-icons/ai";
 import { MdOutlineLocalOffer } from "react-icons/md";
 const WhyPungent = () => {
   return (
-    <div className="container my-24 px-6 mx-auto">
+    <div className="container my-24 mx-auto">
       <section className="mb-32 text-gray-800 text-center">
         <h2 className="text-3xl font-bold mb-20">
           Why Perfume <span className="text-rose-600">Pungent</span>
         </h2>
-        <div className="grid lg:gap-x-12 lg:grid-cols-3">
+        <div className="container mx-auto grid lg:gap-x-12 lg:grid-cols-3">
           <div className="mb-12 lg:mb-0">
             <div className="rounded-lg shadow-lg h-full block bg-white">
               <div className="flex justify-center">
@@ -22,7 +22,7 @@ const WhyPungent = () => {
                   Fast Delivery Service
                 </h3>
                 <p className="text-gray-500">
-                  Next Day Delivery if you order by 2 Pm today.
+                  Next Day Delivery if you deal with us by 2 Pm today.
                 </p>
               </div>
             </div>
@@ -40,7 +40,8 @@ const WhyPungent = () => {
                   Free Delivery
                 </h3>
                 <p className="text-gray-500">
-                  Free Delivery & Free Gift Wrapping Available on request.
+                  Free delivery on all deals over $50.00. Free Gift Wrapping
+                  Available on request.
                 </p>
               </div>
             </div>
