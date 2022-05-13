@@ -72,8 +72,19 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#!" className="text-white hover:text-rose-400">
-                  Best Sellers
+                <a
+                  href="#top-rated-supplier"
+                  className="text-white hover:text-rose-400"
+                >
+                  Top Rated Supplier's
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#sold-items"
+                  className="text-white hover:text-rose-400"
+                >
+                  Sold Item's
                 </a>
               </li>
               <li>
@@ -147,7 +158,10 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#!" className="text-white hover:text-rose-400">
+                <a
+                  href="#contact-us"
+                  className="text-white hover:text-rose-400"
+                >
                   Contact Us
                 </a>
               </li>

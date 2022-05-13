@@ -45,7 +45,7 @@ const InventoryDetail = () => {
 
   // handle Delivered
   const handleDelivered = () => {
-    if (quantity >= 0) {
+    if (quantity > 0) {
       const quantity = parseInt(inventory?.quantity) - 1;
       const updatedQuantity = { quantity };
       const url = `https://fast-crag-27449.herokuapp.com/inventory/${inventoryId}`;

@@ -4,11 +4,12 @@ import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import SocialSignIn from "../SocialSignIn/SocialSignIn";
 import Loading from "../../Shared/Loading/Loading";
 import useToken from "../../../hooks/useToken";
+import { toast } from "react-toastify";
 
 const SignUp = () => {
   const [errorMessage, setErrorMessage] = useState("");
@@ -16,8 +17,10 @@ const SignUp = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const [token] = useToken(user);
-
+  const customId = "custom-id-yes";
   const navigate = useNavigate();
+  const location = useLocation();
+  let from = location.state?.from?.pathname || "/";
   let errorElement;
 
   const navigateSignin = () => {
@@ -30,7 +33,11 @@ const SignUp = () => {
 
   if (token) {
     // console.log("token", token);
-    navigate("/home");
+    // navigate("/home");
+    navigate(from, { replace: true });
+    toast.success("SignUp Successfully!", {
+      toastId: customId,
+    });
   }
   const handleSignUp = async (event) => {
     event.preventDefault();

@@ -35,12 +35,6 @@ const Header = () => {
                 </CustomLink>
                 <CustomLink
                   className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
-                  to="/inventory"
-                >
-                  Inventory
-                </CustomLink>
-                <CustomLink
-                  className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
                   to="/about"
                 >
                   About
@@ -53,6 +47,12 @@ const Header = () => {
                 </CustomLink>
                 {user && (
                   <>
+                    <CustomLink
+                      className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
+                      to="/inventory"
+                    >
+                      Inventory
+                    </CustomLink>
                     <CustomLink
                       className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
                       to="/manageitems"
@@ -164,12 +164,6 @@ const Header = () => {
               </CustomLink>
               <CustomLink
                 className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
-                to="/inventory"
-              >
-                Inventory
-              </CustomLink>
-              <CustomLink
-                className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
                 to="/about"
               >
                 About
@@ -182,6 +176,12 @@ const Header = () => {
               </CustomLink>
               {user && (
                 <>
+                  <CustomLink
+                    className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
+                    to="/inventory"
+                  >
+                    Inventory
+                  </CustomLink>
                   <CustomLink
                     className="text-gray-300 hover:bg-text-700 text-sm hover:text-white px-3 py-2 rounded-md"
                     to="/manageitems"

@@ -24,7 +24,15 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/home" element={<Home></Home>}></Route>
-        <Route path="/inventory" element={<Inventories></Inventories>}></Route>
+        <Route
+          path="/inventory"
+          element={
+            <RequireAuth>
+              <Inventories></Inventories>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route></Route>
         <Route
           path="/inventory/:inventoryId"
           element={
@@ -65,11 +73,6 @@ function App() {
       </Routes>
       <Footer></Footer>
       <ToastContainer />
-      {/* <script>
-        {" "}
-        Scrollbar.initAll();Scrollbar.init(document.querySelector('#my-scrollbar'),
-        options);{" "}
-      </script> */}
     </div>
   );
 }

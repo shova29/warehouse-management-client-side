@@ -31,6 +31,9 @@ const SignIn = () => {
 
   if (token) {
     navigate(from, { replace: true });
+    toast.success("Signin Successfully!", {
+      toastId: customId,
+    });
   }
 
   let errorElement;

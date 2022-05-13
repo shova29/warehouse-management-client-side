@@ -3,7 +3,7 @@ import banner3 from "../../Assets/Images/banner/banner-3.jpg";
 
 const About = () => {
   return (
-    <div className="container my-24 px-6 mx-auto">
+    <div className="container my-24 px-6 mx-auto" id="about">
       <section className="mb-32 text-gray-800">
         <div className="container mx-auto xl:px-32 text-center lg:text-left">
           <div className="grid lg:grid-cols-2 flex items-center">

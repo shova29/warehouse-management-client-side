@@ -5,7 +5,7 @@ import BestSeller from "../BestSeller/BestSeller";
 const BestSellers = () => {
   const { inventoryItems } = useInventoryItems();
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto" id="top-rated-supplier">
       <h2 className="best-sellers-title text-center lg:text-4xl font-extrabold mt-12">
         Top Rated<span className="text-rose-500 "> Supplier's </span>
       </h2>

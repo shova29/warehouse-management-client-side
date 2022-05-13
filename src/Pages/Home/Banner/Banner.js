@@ -11,7 +11,7 @@ const Banner = () => {
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-12 flex items-center">
             <div className="mt-12 lg:mt-0 animate__animated animate__fadeInUp animate__delay-0.5s">
-              <h1 className="lg:text-7xl md:text-6xl sm:text-5xl font-bold tracking-tight mb-12">
+              <h1 className="sm:text-4xl lg:text-7xl md:text-6xl font-bold tracking-tight mb-12">
                 Perfume
                 <br />
                 <span className="text-rose-600">Pungent</span>
@@ -40,10 +40,10 @@ const Banner = () => {
                 About Pungent
               </button>
             </div>
-            <div className="mb-12 lg:mb-0">
+            <div className="mb-12 lg:mb-0 sm:mx-auto">
               <img
                 src={banner}
-                className="animate__animated animate__slideInRight animate__delay-0.5s w-full h-80 rounded-lg shadow-lg"
+                className="animate__animated animate__slideInRight animate__delay-0.5s sm:min-w h-80 rounded-lg shadow-lg"
                 alt=""
               />
             </div>

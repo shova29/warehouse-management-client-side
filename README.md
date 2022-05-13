@@ -7,7 +7,7 @@ Can also check Server Site Repo [Click here for Server Site Repo](https://github
 ## Features and Functionality:
 
 - This is a full-stack website about Perfume Pungent Warehouse management website where multiple inventory items that are managed.
-- The Home page is consists of header section, banner section, our beloved seller section, inventory items section, top rated supplier's section, sold item's section, why perfume Ppungent section, contact us section and footer section.
+- The Home page is consists of header section, banner section, our beloved seller section, inventory items section, top rated supplier's section, sold item's section, why perfume Pungent section, contact us section and footer section.
 - There are available 2 categories of the perfume. One is Men's Perfume and another is Women's Perfume.
 - The Inventory page contains all the stocked items of our warehouse that.
 - The About page provides the information about the Perfume Pungent Warehouse.
@@ -46,7 +46,7 @@ Back-end
 2. MongoDB
 3. Express js
 
-Hosting
+## Hosting
 
 - Client Side Hosted by Firebase
 - Server site hosted by Heroku
