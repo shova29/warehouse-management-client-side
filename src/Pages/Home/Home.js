@@ -67,10 +67,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <BestSellers id="top-rated-supplier"></BestSellers>
-      <SoldItems id="sold-items"></SoldItems>
+      <BestSellers></BestSellers>
+      <SoldItems></SoldItems>
       <WhyPungent></WhyPungent>
-      <Contact id="contact-us"></Contact>
+      <Contact></Contact>
     </>
   );
 };
