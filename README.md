@@ -9,12 +9,10 @@ Can also check Server Site Repo [Click here for Server Site Repo](https://github
 - This is a full-stack website about Perfume Pungent Warehouse management website where multiple inventory items that are managed.
 - The Home page is consists of header section, banner section, our beloved seller section, inventory items section, top rated supplier's section, sold item's section, why perfume Pungent section, contact us section and footer section.
 - There are available 2 categories of the perfume. One is Men's Perfume and another is Women's Perfume.
-- The Inventory page contains all the stocked items of our warehouse that.
+- The Inventory page contains all the stocked items of our warehouse.
 - The About page provides the information about the Perfume Pungent Warehouse.
 - The Blogs page contains three questions and their answers.
-- User can Create an Account using email/password-based authentication and also social signin authentication. Email will be verified.
-- User can Create an Account and Signin via Firebase authentication.
-- User can also Signin via Google signin or Github signin and also reset the password.
+- User can Create an Account using email/password-based authentication and also social signin authentication. Email will be verified also reset the password.
 - Clicking on the stock update button it will take user to inventory/:id route where can be restocked the items and also delieverd the items.
 - Clicking on the Manage Inventories button it will take manage inventory page where an items can be deleted.
 - There is a button named add new item on the Manage Inventories page. Clicking on the Add New Item button it will take add items page where item can be added.
