@@ -9,7 +9,7 @@ const useToken = (user) => {
       const email = user?.user.email;
       if (email) {
         const { data } = await axios.post(
-          "https://fast-crag-27449.herokuapp.com/signin",
+          "https://warehouse-management-server-side-shova29-2up0sif5l.vercel.app/signin",
           {
             email,
           }

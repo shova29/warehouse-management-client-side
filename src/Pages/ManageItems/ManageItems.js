@@ -11,7 +11,7 @@ const ManageItems = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure to delete a item?");
     if (proceed) {
-      const url = `https://fast-crag-27449.herokuapp.com/inventory/${id}`;
+      const url = `https://warehouse-management-server-side-shova29-2up0sif5l.vercel.app/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })

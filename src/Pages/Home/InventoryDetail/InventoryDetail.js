@@ -23,7 +23,7 @@ const InventoryDetail = () => {
     if (addQuantity >= 0) {
       quantity = parseInt(quantity) + addQuantity;
       let updatedQuantity = { quantity };
-      const url = `https://fast-crag-27449.herokuapp.com/inventory/${inventoryId}`;
+      const url = `https://warehouse-management-server-side-shova29-2up0sif5l.vercel.app/inventory/${inventoryId}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -48,7 +48,7 @@ const InventoryDetail = () => {
     if (quantity > 0) {
       const quantity = parseInt(inventory?.quantity) - 1;
       const updatedQuantity = { quantity };
-      const url = `https://fast-crag-27449.herokuapp.com/inventory/${inventoryId}`;
+      const url = `https://warehouse-management-server-side-shova29-2up0sif5l.vercel.app/inventory/${inventoryId}`;
       fetch(url, {
         method: "PUT",
         headers: {

@@ -12,7 +12,7 @@ const AddItem = () => {
   const onSubmit = (data) => {
     // console.log(data);
     data.email = user?.email;
-    const url = `https://fast-crag-27449.herokuapp.com/inventory`;
+    const url = `https://warehouse-management-server-side-shova29-2up0sif5l.vercel.app/inventory`;
     fetch(url, {
       method: "POST",
       headers: {
